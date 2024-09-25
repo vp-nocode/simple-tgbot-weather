@@ -66,9 +66,9 @@ def get_weather_weatherstack(city):
        if 'request' in response.json():
            cur_location = response.json()['location']
            cur_report = response.json()['current']
-           forecast_text = f'city: {cur_location['name']}, country: {cur_location['country']}, localtime: {cur_location['localtime']}\n'
-           forecast_text += f'T: {cur_report['temperature']}°C, wind_speed: {cur_report['wind_speed']} m/s, pressure: {cur_report['pressure']} kPa\n'
-           forecast_text += f'description: {cur_report['weather_descriptions']}'
+           forecast_text = f"city: {cur_location['name']}, country: {cur_location['country']}, localtime: {cur_location['localtime']}\n"
+           forecast_text += f"T: {cur_report['temperature']}°C, wind_speed: {cur_report['wind_speed']} m/s, pressure: {cur_report['pressure']} kPa\n"
+           forecast_text += f"description: {cur_report['weather_descriptions']}"
            return {'status': True, 'forecast': forecast_text}
        else:
            return {'status': False, 'forecast': None}
